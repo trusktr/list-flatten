@@ -17,7 +17,9 @@
     "build-amd": "./.scripts/build-amd.sh",
     "build-global": "./.scripts/build-global.sh"
   },
-  "dependencies": {},
+  "dependencies": {
+      "array.from": "^0.3.0"
+  },
   "devDependencies": {
     "browserify": "^12.0.0",
     "babelify": "^7.0.0",

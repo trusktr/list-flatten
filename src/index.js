@@ -1,10 +1,12 @@
-export default
-function flatten(array) {
-    let currentArray = Array.from(array) // ES2015, in case we pass an array-like thing.
-    let breadcrumbs = []
-    let result = []
+require('array.from') // for now, since we can't get Babel working (https://phabricator.babeljs.io/T6980)
 
-    let i=0
+module.exports =
+function flatten(array) {
+    var currentArray = Array.from(array) // ES2015, in case we pass an array-like thing.
+    var breadcrumbs = []
+    var result = []
+
+    var i=0
     while (currentArray) {
 
         if (currentArray[i] instanceof Array) {
@@ -14,7 +16,7 @@ function flatten(array) {
         }
         else { result.push(currentArray[i]) }
 
-        let crumb = null
+        var crumb = null
         while ( currentArray && i === currentArray.length - 1 ) {
             crumb = breadcrumbs.pop()
             currentArray = crumb ? crumb.currentArray : null
