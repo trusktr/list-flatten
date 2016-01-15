@@ -1,6 +1,6 @@
 {
   "name": "list-flatten",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Flatten an array or array-like list (non-recursive implementation).",
   "format": "es6",
   "main": "index.js",
