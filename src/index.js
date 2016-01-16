@@ -1,12 +1,12 @@
-require('array.from') // for now, since we can't get Babel working (https://phabricator.babeljs.io/T6980)
+import 'babel-polyfill'
 
-module.exports =
+export default
 function flatten(array) {
-    var currentArray = Array.from(array) // ES2015, in case we pass an array-like thing.
-    var breadcrumbs = []
-    var result = []
+    let currentArray = Array.from(array) // ES2015, in case we pass an array-like thing.
+    let breadcrumbs = []
+    let result = []
 
-    var i=0
+    let i=0
     while (currentArray) {
 
         if (currentArray[i] instanceof Array) {
@@ -16,7 +16,7 @@ function flatten(array) {
         }
         else { result.push(currentArray[i]) }
 
-        var crumb = null
+        let crumb = null
         while ( currentArray && i === currentArray.length - 1 ) {
             crumb = breadcrumbs.pop()
             currentArray = crumb ? crumb.currentArray : null
