@@ -4,6 +4,7 @@ node_modules
 # ignore build files.
 /*.js
 /*.js.map
+!/webpack.config.js
 
 # Ignore built output folders. Edit this list: list the the top-level folders
 # that you have in your `src` folder. Maintaining this is a tradeoff to the
